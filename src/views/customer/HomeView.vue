@@ -101,10 +101,10 @@
               </div>
               <div class="d-flex align-items-center">
                 <a href="#" class="border rounded-circle p-2 icon-hover me-2">
-                  <span class="material-symbols-outlined"> favorite </span>
+                  <span class="material-icons"> favorite </span>
                 </a>
                 <a href="#" class="border rounded-circle p-2 icon-hover">
-                  <span class="material-symbols-outlined"> shopping_cart </span>
+                  <span class="material-icons"> shopping_cart </span>
                 </a>
               </div>
             </div>
@@ -188,7 +188,7 @@
       </div>
       <ul class="about-service row row-cols-4 py-5 border-top border-bottom border-light">
         <li class="col border-end border-light">
-          <span class="material-symbols-rounded fs-1 mb-3">
+          <span class="material-icons fs-1 mb-3">
             local_shipping
           </span>
           <h3 class="fs-4 mb-4">交貨快速</h3>
@@ -197,21 +197,21 @@
           </p>
         </li>
         <li class="col border-end border-light">
-          <span class="material-symbols-rounded fs-1 mb-3">
+          <span class="material-icons fs-1 mb-3">
             lock
           </span>
           <h3 class="fs-4 mb-4">售後服務</h3>
           <p>為保障買家權益， 所有商品皆享有30日的售後服務。</p>
         </li>
         <li class="col border-end border-light">
-          <span class="material-symbols-rounded fs-1 mb-3">
+          <span class="material-icons fs-1 mb-3">
             question_answer
           </span>
           <h3 class="fs-4 mb-4">客服服務</h3>
           <p>如購買過程及收到商品有任何問題，歡迎聯繫我們， 我們會盡快回覆您。</p>
         </li>
         <li class="col">
-          <span class="material-symbols-rounded fs-1 mb-3">
+          <span class="material-icons fs-1 mb-3">
             card_giftcard
           </span>
           <h3 class="fs-4 mb-4">包裝服務</h3>

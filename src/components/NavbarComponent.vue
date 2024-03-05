@@ -8,7 +8,7 @@
     <div class="navbar-container d-flex justify-content-center align-items-center">
       <div class="navbar-control d-flex" v-if="scrollDown || showIcon">
         <router-link class="me-4 scale-hover" :to="`/about`">
-          <span class="material-symbols-rounded fs-3"> storefront </span>
+          <span class="material-icons fs-3"> storefront </span>
         </router-link>
         <div class="pop-up">
           <a
@@ -17,7 +17,7 @@
             class="position-relative me-4 scale-hover"
           >
             <span class="nav-num"> 5 </span>
-            <span class="material-symbols-rounded fs-3">
+            <span class="material-icons fs-3">
               favorite
             </span>
           </a>
@@ -45,7 +45,7 @@
             <span class="nav-num">
               5
             </span>
-            <span class="material-symbols-rounded fs-3"> shopping_cart </span>
+            <span class="material-icons fs-3"> shopping_cart </span>
           </a>
           <div class="nav-dropdown bg-light" ref="navCartDropdown" @click.stop>
             <div>
