@@ -5,7 +5,7 @@
       <div class="line"></div>
       <div class="recommend-product row align-items-center pb-4 mb-4">
         <div class="col-4">
-          <div class="d-flex align-items-center mb-4">
+          <div class="d-flex mb-4">
             <h3 class="title">珍珠系列</h3>
             <span class="fs-5 opacity-50">Pearl</span>
           </div>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="text-container col-4">
-          <div class="d-flex align-items-center mb-4">
+          <div class="d-flex mb-4">
             <h3 class="title">珍珠系列</h3>
             <span class="fs-5 opacity-50">Pearl</span>
           </div>
@@ -51,7 +51,7 @@
       </div>
       <div class="recommend-product row align-items-center">
         <div class="col-4">
-          <div class="d-flex align-items-center mb-4">
+          <div class="d-flex mb-4">
             <h3 class="title">珍珠系列</h3>
             <span class="fs-5 opacity-50">Pearl</span>
           </div>
@@ -75,7 +75,7 @@
     </div>
     <!-- swipper -->
     <div class="home-product-swiper container mb-5">
-      <div class="d-flex align-items-center mb-5">
+      <div class="d-flex mb-5">
         <h3 class="title">限時特價</h3>
         <p class="opacity-50 fs-5">On Sale</p>
       </div>
@@ -160,7 +160,7 @@
     </div>
     <!-- about -->
     <div class="home-about container mb-5">
-      <div class="d-flex align-items-center mb-5">
+      <div class="d-flex mb-5">
         <h3 class="title">關於品牌</h3>
         <p class="opacity-50 fs-5">About Us</p>
       </div>
@@ -256,23 +256,6 @@ export default {
 }
 
 .home-recommend {
-  .title {
-    position: relative;
-    margin: 0 60px 0 0;
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      height: 30px;
-      right: -15px;
-      top: 50%;
-      width: 1px;
-      border-left: 1px solid #fff;
-      transform: translateY(-50%) skewX(-45deg);
-      transform-origin: left bottom;
-    }
-  }
 
   .img-bg {
     background-image: url("https://storage.googleapis.com/vue-course-api.appspot.com/chiayu/1625319903781.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=mzk1w6ZKrwnsx%2BLQrmWZX1sD4F8UjExVKwE4%2B2gF8wgsMxWrOlfHp4NP85hnXJTBXB8Nb6uiINoNiSyFMz%2Fdmh2MSY9lU5NnES5rpaPKwHfK8jCiJYb8jMQDjrjPHEMkCl7ZuNxb5VwWK%2Bsh5zKKBkuozzZHdaczYTl1LL6dhROv6%2FOpOpJkO%2Bo%2FwMjHbNY6CGR0D5KkxhvVBCHZww7WUcmrxGoqclQ2zHIkhnn4IExRoG9iM3zK%2BYhg6d0H3kkHj9kSu2HWuogEK9JJ71zSsbxoaukNS3brjn%2F4Tr9LusX9laVE8Dy434Aq38%2FKsYY4flZk6m650G4ZkKA45eZ0cA%3D%3D");
@@ -313,23 +296,6 @@ export default {
 }
 
 .home-product-swiper {
-  .title {
-    position: relative;
-    margin-right: 60px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      height: 30px;
-      right: -15px;
-      top: 50%;
-      width: 1px;
-      border-left: 1px solid #fff;
-      transform: translateY(-50%) skewX(-45deg);
-      transform-origin: left bottom;
-    }
-  }
 
   .product-item {
     position: relative;
@@ -393,23 +359,6 @@ export default {
 }
 
 .home-product-category {
-  .title {
-    position: relative;
-    margin-right: 60px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      height: 30px;
-      right: -15px;
-      top: 50%;
-      width: 1px;
-      border-left: 1px solid #fff;
-      transform: translateY(-50%) skewX(-45deg);
-      transform-origin: left bottom;
-    }
-  }
 
   .bg-topic {
     position: relative;
@@ -476,23 +425,6 @@ export default {
 }
 
 .home-about {
-  .title {
-    position: relative;
-    margin-right: 60px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      height: 30px;
-      right: -15px;
-      top: 50%;
-      width: 1px;
-      border-left: 1px solid #fff;
-      transform: translateY(-50%) skewX(-45deg);
-      transform-origin: left bottom;
-    }
-  }
 
   .about-content{
     .font-design {

@@ -6,6 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
 
+@import 'components/breadcrumb';
+@import 'components/decoration';
+@import 'components/size';
+
 body {
   color: #fff;
   font-family: "Noto Sans TC", sans-serif;

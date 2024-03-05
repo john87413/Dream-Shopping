@@ -55,16 +55,16 @@
       </div>
       <div class="col">
         <h4 class="mb-4">聯絡我們</h4>
-        <ul class="mb-5">
+        <ul class="mb-3">
           <li class="mb-2">電話 : 02 213 1234</li>
           <li class="mb-2">E-mail : ringring@gmail.com</li>
           <li>MON - FRI : 9:00 am - 18:00 pm</li>
         </ul>
         <div class="d-flex social-icon">
-          <a class="scale-hover me-5" href="#" target="_blank">
+          <a class="scale-hover me-3" href="#" target="_blank">
             <span><img src="/images/fb.svg" alt="fb" /></span>
           </a>
-          <a class="scale-hover me-5" href="#" target="_blank">
+          <a class="scale-hover me-3" href="#" target="_blank">
             <span><img src="/images/ig.svg" alt="ig" /> </span>
           </a>
           <a class="scale-hover" href="#" target="_blank">
@@ -105,6 +105,13 @@ export default {};
         color: #fff !important;
       }
     }
+  }
+}
+
+.social-icon {
+  img {
+    width: 30px;
+    height: 30px;
   }
 }
 </style>

@@ -1,0 +1,17 @@
+.title {
+  position: relative;
+  margin: 0 60px 0 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 30px;
+    right: -15px;
+    top: 50%;
+    width: 1px;
+    border-left: 1px solid #fff;
+    transform: translateY(-50%) skewX(-45deg);
+    transform-origin: left bottom;
+  }
+}

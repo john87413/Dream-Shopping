@@ -1,16 +1,19 @@
-<template lang="">
-  <div class="mt-5"></div>
+<template lang="html">
+  <NavbarComponent />
   <div class="background"></div>
   <RouterView />
   <FooterComponent />
 </template>
+
 <script>
 import FooterComponent from '@/components/FooterComponent.vue';
+import NavbarComponent from '@/components/NavbarComponent.vue';
 
 export default {
-  components: { FooterComponent },
+  components: { FooterComponent, NavbarComponent },
 };
 </script>
+
 <style lang="scss">
 .background {
   background-image: url("/images/background.jpg");
