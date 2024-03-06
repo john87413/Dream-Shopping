@@ -14,7 +14,7 @@
           <a
             @click.stop.prevent="openNavList('favorite')"
             href="#"
-            class="position-relative me-4 scale-hover"
+            class="d-block position-relative me-4 scale-hover"
           >
             <span class="nav-num"> 5 </span>
             <span class="material-icons fs-3">
@@ -40,7 +40,7 @@
             @click.stop.prevent="openNavList('cart')"
             v-if="showCart"
             href="#"
-            class="position-relative scale-hover me-4"
+            class="d-block position-relative scale-hover me-4"
           >
             <span class="nav-num">
               5

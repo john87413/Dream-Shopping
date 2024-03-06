@@ -1,4 +1,5 @@
 @import "bootstrap/scss/functions";
+@import "bootstrap/scss/mixins";
 @import "./variables";
 @import "bootstrap/scss/bootstrap.scss";
 
@@ -11,18 +12,19 @@
 @import 'components/size';
 @import 'components/text';
 
+@import 'components/productView';
+
 body {
   color: #fff;
   font-family: "Noto Sans TC", sans-serif;
 }
 
 a {
-  display: block;
   text-decoration: none;
   color: #fff;
 }
 
-.material-symbols-outlined {
+.material-icons {
   vertical-align: text-bottom;
 }
 

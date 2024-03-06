@@ -1,0 +1,132 @@
+.product-view {
+  .product-banner {
+    height: 60vh;
+    background: url("https://storage.googleapis.com/vue-course-api.appspot.com/chiayu/1626001947105.png?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=bdfpqdl1rGBDueWMXHIM4A7U2W47xwUljFqWVePj9kxUPoJ%2FEfUGtGxIOgjxJohaMd9O5LhXRArGK1B4uPcbyNB0h%2FjJtKsFsJiwWeu49KmTXDEJXqlsSI7Q8NjSrS4aP%2FI93yrUpUHdFwlAeIu6xYYFu5SjYqJ2ST7d8k4PB4ajmvtFbfsle4kUBvS2Tr%2FOG%2Bk%2FXI6mW%2Bzlx14va%2BhUxESmGMSAnsJBFjwNAk9H2ecnMX3DmCXJdtXK29MjfqpMXssXNY%2BO%2B5ZRAov%2BE30VunxFAzin%2BVMas%2BmtiN79fTJ%2F%2Fqw%2Bd%2BElqZrB3OrUTM6VFVg5Qs7jS24HKIhQAYbKRw%3D%3D") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  .w-bar {
+    width: 1px;
+  }
+
+  .category-link {
+
+    &:last-child {
+      a {
+        margin-right: 0 !important;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+
+      &.product-category {
+        &:first-child {
+          display: list-item;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+
+      &.product-category {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+
+    a {
+      transform-origin: left top;
+      display: flex;
+      align-items: center;
+      margin-right: 24px;
+      padding: 8px 12px;
+      border-radius: 50rem;
+      transition: all 0.5s;
+
+      span {
+        position: relative;
+        transition: all 0.5s;
+        opacity: 0;
+        left: 0;
+      }
+
+      @include media-breakpoint-up(md) {
+        margin-right: 36px;
+
+        span {
+          display: none;
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        padding: 0px;
+        border-radius: 50rem;
+
+        span {
+          display: inline;
+        }
+      }
+
+      &:hover {
+        background: #fff;
+        color: $dark;
+
+        @include media-breakpoint-up(xl) {
+          text-shadow: 1px 1px 2px rgba($dark, 0.6);
+          transform: scale(1.05);
+          background-color: transparent;
+          color: #fff;
+        }
+
+        span {
+          @include media-breakpoint-up(xl) {
+            opacity: 1;
+            left: 12px;
+          }
+        }
+      }
+    }
+
+    .cate-active {
+      display: inline-block;
+      position: relative;
+      color: $dark;
+      background-color: #fff;
+      border-radius: 50rem;
+      padding: 8px 12px;
+
+      span {
+        display: none;
+      }
+
+      &:hover {
+        color: $dark;
+
+        @include media-breakpoint-up(xl) {
+          color: #fff;
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        padding: 0;
+        border-radius: 0;
+        color: #fff;
+        background-color: transparent;
+        text-shadow: 1px 1px 2px rgba($dark, 0.6);
+
+        &::before {
+          content: '';
+          width: 100%;
+          height: 4px;
+          display: block;
+          position: absolute;
+          bottom: 1px;
+          background-color: $secondary;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}

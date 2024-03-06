@@ -94,6 +94,7 @@ export default {};
   }
 
   a {
+    display: block;
     transition: all 0.5s;
     transform-origin: left top;
 
