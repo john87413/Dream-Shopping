@@ -1,0 +1,43 @@
+.quantity {
+  height: 36px;
+  border: 1px solid rgba(#fff, 0.8);
+  background: rgba(#fff, 0.8);
+  border-radius: 0px !important;
+}
+
+.quantity-btn {
+  line-height: 1;
+
+  outline: none;
+  padding: 0px 8px;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #fff;
+  width: 48px;
+  height: 36px;
+  transition: all 0.5s;
+  &.remove {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    &:disabled {
+      background: rgba(#fff, 0.5);
+    }
+  }
+  &.cart-remove {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    &:disabled {
+      background: rgba(#fff, 0.3);
+    }
+  }
+  &.plus {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  &:hover {
+    background-color: rgba(#fff, 0.5);
+  }
+}

@@ -2,8 +2,9 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-import './assets/all.scss';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
+import './assets/all.scss';
 import App from './App.vue';
 import router from './router';
 
