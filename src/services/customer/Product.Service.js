@@ -7,11 +7,11 @@ class ProductService {
     return axios.get(`${VITE_URL}/api/${VITE_PATH}/products/all`);
   }
 
-  static async getProductsByPage(page) {
-    return axios.get(`${VITE_URL}/api/${VITE_PATH}/products?page=${page}`);
+  static async getProductsByPage(page, category) {
+    return axios.get(`${VITE_URL}/api/${VITE_PATH}/products?page=${page}&category=${category}`);
   }
 
-  static async getProduct(id) {
+  static async getProductById(id) {
     return axios.get(`${VITE_URL}/api/${VITE_PATH}/product/${id}`);
   }
 }
