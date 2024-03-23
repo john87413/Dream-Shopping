@@ -1,20 +1,20 @@
 <template lang="html">
   <div class="product-view">
     <div class="product-banner"></div>
-    <div class="container border-bottom border-light py-5 mb-5">
+    <div class="container border-bottom border-light py-5 my-5">
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item">
           <router-link :to="`/`">首頁</router-link>
         </li>
         <li class="breadcrumb-item">
-          <router-link :to="`/products`">產品</router-link>
+          <router-link :to="`/shop`">產品</router-link>
         </li>
         <li class="breadcrumb-item active">
           {{ nowCategory }}
         </li>
       </ol>
       <div class="row">
-        <div class="col-12 col-xl-3 mt-xl-5 mb-5 mb-xl-0">
+        <div class="col-12 col-xl-3 mt-xl-5 pt-xl-5 mb-5 mb-xl-0">
           <div class="d-none d-xl-block w-xl-90">
             <div class="d-none d-xl-flex justify-content-between mb-4">
               <div class="d-flex">
@@ -68,7 +68,7 @@
               class="d-flex flex-wrap flex-md-nowrap d-xl-block justify-content-md-center"
             >
               <li
-                v-for="category in productsCategory"
+                v-for="category in productCategory"
                 class="product-category category-link mb-3"
                 :key="category"
               >
@@ -88,12 +88,20 @@
           <div class="d-flex mb-5">
             <h1 class="title">{{ nowCategory }}</h1>
           </div>
-          <ul class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-5 mb-13">
-            <li class="col" v-for="item in productByCategory" :key="item.id">
-              <CardComponent :product="item" />
+          <ul class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-5 mb-7">
+            <li
+              class="col px-3"
+              v-for="item in productListByCategory"
+              :key="item.id"
+            >
+              <CardComponent :product="item" :cartCard="false" />
             </li>
           </ul>
-          <!-- <Pagination :pagination="pagination" /> -->
+          <PaginationComponent
+            :pages="pagination"
+            :category="nowCategory"
+            @emit-pages="getProducts"
+          />
         </div>
       </div>
     </div>
@@ -103,29 +111,41 @@
 <script>
 import ProductServices from '@/services/customer/Product.Service';
 import CardComponent from '@/components/CardComponent.vue';
+import PaginationComponent from '@/components/PaginationComponent.vue';
 
 export default {
   data() {
     return {
-      productsAll: [],
-      productsCategory: [],
-      selectCategory: '',
-      isLoading: false,
+      productCategory: [],
       nowCategory: '',
-      productByCategory: [],
+      productListByCategory: [],
+      pagination: {},
     };
   },
-  components: { CardComponent },
+  components: { CardComponent, PaginationComponent },
   methods: {
-    async getAllData() {
+    // get products by page
+    async getProducts(page = 1) {
+      try {
+        const res = await ProductServices.getProductsByPage(
+          page,
+          this.nowCategory === '全部商品' ? '' : this.nowCategory,
+        );
+        const { products, pagination } = res.data;
+        this.productListByCategory = products;
+        this.pagination = pagination;
+      } catch (error) {
+        /* empty */
+      }
+    },
+    // get all product category
+    async getAllCategory() {
       try {
         const res = await ProductServices.getAllProducts();
         if (res.data.success) {
-          this.productsAll = res.data.products;
-          this.productByCategory = res.data.products;
-          this.productsCategory = [
+          this.productCategory = [
             '全部商品',
-            ...new Set(this.productsAll.map((product) => product.category)),
+            ...new Set(res.data.products.map((product) => product.category)),
           ];
         }
       } catch (error) {
@@ -133,43 +153,17 @@ export default {
       }
     },
     changeCategory(category) {
-      this.$router.push({ name: 'products', query: { category } });
       this.nowCategory = category;
-    },
-    showCategory(page = 1) {
-      const tempProductCategory = [...this.categoryProduct];
-      const allPage = Math.ceil(tempProductCategory.length / 10);
-      this.pagination = {
-        current_page: page,
-        total_pages: allPage,
-        has_pre: page > 1,
-        has_next: page < allPage,
-      };
-      this.productByCategory = tempProductCategory.splice(
-        (page - 1) * 10,
-        page * 10,
-      );
+      this.$router.push({ name: 'shop', query: { category } });
     },
   },
   watch: {
-    $route() {
-      this.nowCategory = this.$route.query.category || '全部商品';
-    },
-    categoryProduct() {
-      // this.showCategory();
+    nowCategory() {
+      this.getProducts();
     },
   },
-  computed: {
-    categoryProduct() {
-      let categoryProduct = [];
-      categoryProduct = this.productsAll.filter(
-        (item) => item.category?.match(this.selectCategory),
-      );
-      return categoryProduct;
-    },
-  },
-  mounted() {
-    this.getAllData();
+  async mounted() {
+    await this.getAllCategory();
     this.nowCategory = this.$route.query.category || '全部商品';
   },
 };
