@@ -45,7 +45,7 @@
         <div class="position-relative d-inline-block">
           <div
             class="btn btn-sm btn-secondary text-white secondary-hover"
-            @click="addCart(product.id)"
+            @click="addCart(product.id, 1)"
           >
             <span>加入購物車</span>
           </div>

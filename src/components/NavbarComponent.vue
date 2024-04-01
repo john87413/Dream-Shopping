@@ -50,7 +50,7 @@
             href="#"
             class="d-block position-relative scale-hover me-4"
           >
-            <span v-if="cart.length" class="nav-num"> {{ cart.length }} </span>
+            <span v-if="carts.length" class="nav-num"> {{ carts.length }} </span>
             <span class="material-icons fs-3"> shopping_cart </span>
           </a>
           <div class="nav-dropdown bg-light" ref="navCartDropdown" @click.stop>
@@ -63,7 +63,7 @@
                 <span class="visually-hidden">Loading...</span>
               </div>
             </div>
-            <div v-if="cart.length <= 0">
+            <div v-if="carts.length <= 0">
               <p class="text-dark text-center p-3">購物車目前沒有商品喔</p>
               <div class="p-3">
                 <router-link
@@ -77,20 +77,20 @@
             <template v-else>
               <ul class="nav-dropdown-body">
                 <li
-                  v-for="item in cart"
+                  v-for="item in carts"
                   class="d-flex text-dark align-items-center
                   justify-content-between border-bottom p-3"
                   :key="item.id"
                 >
                   <div class="d-flex align-items-center">
                     <img
-                      class="w-30 me-3"
+                      class="w-25 me-2"
                       :src="item.product.imageUrl"
                       :alt="item.product.title"
                     />
                     <div class="">
                       <p>{{ item.product.title }}</p>
-                      <p class="fs-7">
+                      <p class="fs-7 opacity-75">
                         {{ item.qty }} * NT${{ item.product.price }} = NT${{
                           item.final_total
                         }}
@@ -108,7 +108,7 @@
                   </a>
                 </li>
               </ul>
-              <div class="px-5 py-3">
+              <div class="p-3">
                 <router-link
                   :to="`/cart`"
                   class="btn btn-secondary secondary-hover text-white w-100"
@@ -263,7 +263,9 @@ export default {
     };
   },
   computed: {
-    ...mapState(cartStore, ['cart']),
+    ...mapState(cartStore, {
+      carts: (store) => store.shoppingCart.carts,
+    }),
   },
   methods: {
     ...mapActions(cartStore, ['readCart', 'delCartItem']),
