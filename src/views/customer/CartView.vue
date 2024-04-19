@@ -97,7 +97,7 @@
               <span class="d-inline d-md-none">小計：</span>
               NT${{ item.total }}
             </td>
-            <td class="col-1 order-2 order-md-0">
+            <td class="col-1 order-2 order-md-0 d-flex">
               <a
                 href="#"
                 class="text-dark scale-hover"

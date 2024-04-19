@@ -1,8 +1,44 @@
+.arrow-rotate{
+  transition: all 0.5s;
+  transform: rotate(180deg);
+}
+
+.scale-hover {
+  &:hover {
+    animation: scale 1s infinite;
+  }
+}
+
+.home-ellipse {
+  ellipse {
+    stroke-dasharray: 4;
+    animation: dash 5s linear infinite;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 50;
+  }
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }

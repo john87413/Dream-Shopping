@@ -21,3 +21,7 @@
     filter: blur(2px);
   }
 }
+
+.bg-linear {
+  background: linear-gradient(to right, rgba(#9d7c5e, 0.8) 0%, rgba(#9f7c5b, 0.3) 100%);
+}

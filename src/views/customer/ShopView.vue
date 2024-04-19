@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="product-view">
     <div class="product-banner"></div>
-    <div class="container border-bottom border-light py-5 my-5">
+    <div class="container border-bottom border-light py-5 my-5 g-5">
       <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item">
           <router-link :to="`/`">首頁</router-link>
@@ -14,9 +14,9 @@
         </li>
       </ol>
       <div class="row">
-        <div class="col-12 col-xl-3 mt-xl-5 pt-xl-5 mb-5 mb-xl-0">
-          <div class="d-none d-xl-block w-xl-90">
-            <div class="d-none d-xl-flex justify-content-between mb-4">
+        <div class="col-12 col-xl-3 mt-4 mb-4 mt-xl-5 pt-xl-3 mb-xl-0 pe-lg-4">
+          <div class="d-none d-xl-block">
+            <div class="d-flex justify-content-between mb-4">
               <div class="d-flex">
                 <span class="w-bar bg-white me-1"></span>
                 <span class="w-bar bg-white me-2"></span>
@@ -47,11 +47,11 @@
               </li>
             </ul>
           </div>
-          <div class="w-xl-90">
+          <div class="">
             <div class="d-none d-xl-flex justify-content-between mb-4">
               <div class="d-flex">
-                <span class="w-bar bg-white me-1"></span
-                ><span class="w-bar bg-white me-2"></span>
+                <span class="w-bar bg-white me-1"></span>
+                <span class="w-bar bg-white me-2"></span>
               </div>
               <h3 class="fs-5">
                 商品分類
@@ -84,13 +84,13 @@
             </ul>
           </div>
         </div>
-        <div class="col-12 col-xl-9">
-          <div class="d-flex mb-5">
-            <h1 class="title">{{ nowCategory }}</h1>
+        <div class="col-12 col-xl-9 ps-xl-4">
+          <div class="d-flex mb-4">
+            <h2 class="title">{{ nowCategory }}</h2>
           </div>
-          <ul class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-5 mb-7">
+          <ul class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 mb-7">
             <li
-              class="col px-3"
+              class="col"
               v-for="item in productListByCategory"
               :key="item.id"
             >

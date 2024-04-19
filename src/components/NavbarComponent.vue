@@ -50,7 +50,7 @@
             href="#"
             class="d-block position-relative scale-hover me-4"
           >
-            <span v-if="carts.length" class="nav-num"> {{ carts.length }} </span>
+            <span v-if="carts && carts.length" class="nav-num"> {{ carts.length }} </span>
             <span class="material-icons fs-3"> shopping_cart </span>
           </a>
           <div class="nav-dropdown bg-light" ref="navCartDropdown" @click.stop>
@@ -63,14 +63,14 @@
                 <span class="visually-hidden">Loading...</span>
               </div>
             </div>
-            <div v-if="carts.length <= 0">
+            <div v-if="carts && carts.length <= 0">
               <p class="text-dark text-center p-3">購物車目前沒有商品喔</p>
               <div class="p-3">
                 <router-link
-                  :to="`/cart`"
+                  :to="`/shop`"
                   class="btn btn-secondary secondary-hover text-white w-100"
                 >
-                  前往購物車
+                  前往商店
                 </router-link>
               </div>
             </div>

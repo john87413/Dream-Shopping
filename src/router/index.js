@@ -43,6 +43,16 @@ const router = createRouter({
           name: 'checkout',
           component: () => import('../views/customer/CheckoutView.vue'),
         },
+        {
+          path: 'payment/:order',
+          name: 'payment',
+          component: () => import('../views/customer/PayView.vue'),
+        },
+        {
+          path: 'after_pay/:order',
+          name: 'afterPay',
+          component: () => import('../views/customer/AfterPayView.vue'),
+        },
       ],
     },
   ],

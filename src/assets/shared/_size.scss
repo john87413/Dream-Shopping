@@ -2,8 +2,8 @@
   width: 80%;
 }
 
-.w-xl-90 {
-  @include media-breakpoint-up(xl) {
-    width: 90% !important;
+.w-lg-100 {
+  @include media-breakpoint-up(lg) {
+    width: 100% !important;
   }
 }

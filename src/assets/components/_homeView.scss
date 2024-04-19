@@ -1,0 +1,202 @@
+.home-recommend {
+  .line {
+    width: 2px;
+  }
+
+  .img-bg {
+    background-image: url("https://storage.googleapis.com/vue-course-api.appspot.com/chiayu/1625319903781.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=mzk1w6ZKrwnsx%2BLQrmWZX1sD4F8UjExVKwE4%2B2gF8wgsMxWrOlfHp4NP85hnXJTBXB8Nb6uiINoNiSyFMz%2Fdmh2MSY9lU5NnES5rpaPKwHfK8jCiJYb8jMQDjrjPHEMkCl7ZuNxb5VwWK%2Bsh5zKKBkuozzZHdaczYTl1LL6dhROv6%2FOpOpJkO%2Bo%2FwMjHbNY6CGR0D5KkxhvVBCHZww7WUcmrxGoqclQ2zHIkhnn4IExRoG9iM3zK%2BYhg6d0H3kkHj9kSu2HWuogEK9JJ71zSsbxoaukNS3brjn%2F4Tr9LusX9laVE8Dy434Aq38%2FKsYY4flZk6m650G4ZkKA45eZ0cA%3D%3D");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 240px;
+    @include media-breakpoint-up(lg) {
+      height: auto;
+    }
+  }
+
+  .bg-mask {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+  }
+
+  .recommend-product {
+    img {
+      transition: all 0.5s;
+    }
+
+    &:nth-child(odd) {
+      img {
+        margin: 0 auto;
+        top: 48px;
+        @include media-breakpoint-up(lg) {
+          top: 0;
+          margin-left: 33.3%;
+          &:hover {
+            transform: translateX(30px);
+          }
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      img {
+        margin: 0 auto;
+        top: 48px;
+        @include media-breakpoint-up(lg) {
+          top: 0;
+          margin-left: -33.3%;
+          &:hover {
+            transform: translateX(-30px);
+          }
+        }
+      }
+    }
+  }
+}
+
+.home-product-swiper {
+  .product-item {
+    position: relative;
+    text-align: left;
+    transform: scale(0.95);
+    transition: all 0.5s;
+
+    .product-tag {
+      position: absolute;
+      padding: 4px 12px;
+      top: -12px;
+      right: -12px;
+      z-index: 1;
+    }
+
+    .product-img {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 338px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition: all 0.5s;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1) rotate(5deg);
+        }
+      }
+    }
+
+    .icon-hover {
+      &:hover {
+        background-color: #fff;
+        color: #bf7f5a;
+      }
+    }
+  }
+
+  swiper-container::part(pagination) {
+    position: static;
+    margin-top: 15px;
+  }
+
+  swiper-container::part(bullet) {
+    background-color: rgba(#fff, 0.8) !important;
+    margin: 0 5px;
+  }
+
+  swiper-container::part(bullet-active) {
+    background-color: rgba(#fff, 0.8) !important;
+    margin: 0 5px;
+  }
+}
+
+.home-product-category {
+  .bg-topic {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    transition: all 0.5s;
+    border-radius: 8px;
+    overflow: hidden;
+
+    p {
+      letter-spacing: 2px;
+      transition: all 0.5s;
+      bottom: 28px;
+      right: 60px;
+      opacity: 0;
+      color: #fff;
+    }
+
+    img {
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      .bg-topic-mask {
+        width: calc(100% - 16px);
+        height: calc(100% - 16px);
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      p {
+        bottom: 28px;
+        right: 36px;
+        opacity: 1;
+        color: #fff;
+      }
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .bg-topic-necklace {
+    height: 624px;
+
+    img {
+      object-position: bottom;
+    }
+  }
+
+  .bg-topic-mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(#fff, 0.7);
+    transition: all 0.5s;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.home-about {
+  .about-content {
+    .font-design {
+      font-family: "Dancing Script", cursive;
+    }
+
+    .about-title {
+      font-size: 72px;
+    }
+
+    .home-ellipse {
+      position: absolute;
+      left: 30%;
+      top: 50%;
+      opacity: 0.5;
+    }
+  }
+
+  .about-service {
+    margin: 0 1px;
+  }
+}
