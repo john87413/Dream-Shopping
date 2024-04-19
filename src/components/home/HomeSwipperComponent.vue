@@ -6,7 +6,7 @@
     </div>
     <swiper-container
       :pagination="{ clickable: true }"
-      :slides-per-view="3"
+      :slides-per-view="1"
       :space-between="24"
       :breakpoints="{
         992: {
@@ -47,7 +47,7 @@
               <a
                 href="#"
                 class="border rounded-circle p-2 icon-hover"
-                @click.prevent="addCart(item.id, 1)"
+                @click.prevent="useCartStore.addCart(item.id, 1)"
               >
                 <span class="material-icons"> shopping_cart </span>
               </a>
@@ -58,7 +58,23 @@
     </swiper-container>
   </div>
 </template>
-<script>
+
+<!-- swiper need to use vue 3 composition api -->
+<script setup>
+import cartStore from '@/store/cartStore';
+import { register } from 'swiper/element/bundle';
+
+defineProps({
+  products: Object,
+});
+
+const useCartStore = cartStore();
+
+register();
+
+</script>
+
+<!-- <script>
 import { mapActions } from 'pinia';
 import cartStore from '@/store/cartStore';
 
@@ -87,5 +103,4 @@ export default {
     register();
   },
 };
-</script>
-<style lang="scss"></style>
+</script> -->
