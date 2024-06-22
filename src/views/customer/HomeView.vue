@@ -7,9 +7,9 @@
     <!-- swipper -->
     <SwipperComponent :products="products"></SwipperComponent>
     <!-- category -->
-    <!-- <CategoryComponent></CategoryComponent> -->
+    <CategoryComponent></CategoryComponent>
     <!-- about -->
-    <!-- <AboutComponent></AboutComponent> -->
+    <AboutComponent></AboutComponent>
   </div>
 </template>
 <script>
@@ -18,16 +18,16 @@ import ProductServices from '@/services/customer/Product.Service';
 import LoadingComponent from '@/components/LoadingComponent.vue';
 import RecommendComponent from '@/components/home/HomeRecommendComponent.vue';
 import SwipperComponent from '@/components/home/HomeSwipperComponent.vue';
-// import CategoryComponent from '@/components/home/HomeCategoryComponent.vue';
-// import AboutComponent from '@/components/home/HomeAboutComponent.vue';
+import CategoryComponent from '@/components/home/category/HomeCategoryComponent.vue';
+import AboutComponent from '@/components/home/HomeAboutComponent.vue';
 
 export default {
   components: {
     LoadingComponent,
     RecommendComponent,
     SwipperComponent,
-    // CategoryComponent,
-    // AboutComponent,
+    CategoryComponent,
+    AboutComponent,
   },
   data() {
     return {

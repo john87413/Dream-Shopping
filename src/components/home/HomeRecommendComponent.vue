@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="home-recommend container position-relative py-5 mb-5">
+  <div class="home-recommend container position-relative py-5 mb-2">
     <div
       class="line d-none d-lg-block position-absolute top-0 start-50 opacity-50 bg-white h-100"
     ></div>

@@ -1,8 +1,8 @@
 <template lang="html">
-  <div class="footer container mb-5">
-    <div class="row">
-      <div class="col">
-        <h4 class="mb-4">品牌故事</h4>
+  <div class="footer container mb-5 ">
+    <div class="row justify-content-between">
+      <div class="mb-5 col-12 col-md-auto">
+        <h5 class="mb-3">品牌故事</h5>
         <ul class="footer-link">
           <li class="mb-2">
             <router-link :to="`/about`">
@@ -18,8 +18,8 @@
           </li>
         </ul>
       </div>
-      <div class="col">
-        <h4 class="text-lg mb-4">商品專區</h4>
+      <div class="mb-5 col-12 col-md-auto">
+        <h5 class="text-lg mb-3">商品專區</h5>
         <ul class="footer-link">
           <li class="mb-2">
             <router-link :to="`/about`">
@@ -53,8 +53,8 @@
           </li>
         </ul>
       </div>
-      <div class="col">
-        <h4 class="mb-4">聯絡我們</h4>
+      <div class="mb-5 col-12 col-md-auto">
+        <h5 class="mb-3">聯絡我們</h5>
         <ul class="mb-3">
           <li class="mb-2">電話 : 02 213 1234</li>
           <li class="mb-2">E-mail : ringring@gmail.com</li>
@@ -94,7 +94,7 @@ export default {};
   }
 
   a {
-    display: block;
+    display: inline-block;
     transition: all 0.5s;
     transform-origin: left top;
 

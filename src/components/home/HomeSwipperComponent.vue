@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="home-product-swiper container mb-5">
+  <div class="home-product-swiper container mb-7">
     <div class="d-flex mb-5 wow animate__animated animate__lightSpeedInLeft">
       <h3 class="title">限時特價</h3>
       <p class="opacity-50 fs-5">On Sale</p>
